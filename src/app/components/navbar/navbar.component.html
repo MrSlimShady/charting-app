@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="navbar-brand">StockMarketCharting</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain"> 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a *ngIf="isLoggedin && !isAdmin" [routerLink]="['/']" class="nav-link">IPOs</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLoggedin && !isAdmin" [routerLink]="['/compare']" class="nav-link">Compare Company/Sector</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a *ngIf="!isLoggedin" [routerLink]="['/register']" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!isLoggedin" [routerLink]="['/login']" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLoggedin" [routerLink]="['/settings']" class="nav-link">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLoggedin" [routerLink]="['/']" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,55 @@
+<div class="card mx-auto " style="width: 500px;">
+
+    <div class="card-header">
+        Register Form
+    </div>
+    <div class="card-body">
+        <form #registerForm = "ngForm" (ngSubmit)="onSubmit()" >
+            <div class="form-class mb-2">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username"
+                #newUsername="ngModel"
+                [(ngModel)]="User.username"
+                [ngClass]="{'is-invalid': newUsername.errors && newUsername.touched}"
+                required
+                >
+                <div [hidden]="!newUsername.errors?.required" class="invalid-feedback">
+                    Username required!
+                </div>
+            </div>
+            <div class="form-class mb-2">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" name="password"
+                #newPassword="ngModel"
+                [(ngModel)]="User.password"
+                [ngClass]="{'is-invalid': newPassword.errors && newPassword.touched}"
+                required
+                >
+                <div [hidden]="!newPassword.errors?.required" class="invalid-feedback">
+                    Password required!
+                </div>
+            </div>
+            <div class="form-class mb-3">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email"
+                #newEmail="ngModel"
+                [(ngModel)]="User.email"
+                [ngClass]="{'is-invalid': newEmail.errors && newEmail.touched}"
+                required
+                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                >
+                <div [hidden]="!newEmail.errors?.required" class="invalid-feedback">
+                    Email required!
+                </div>
+                <div [hidden]="!newEmail.errors?.pattern" class="invalid-feedback">
+                    Invalid Email!
+                </div>
+            </div>
+            
+            
+            
+            <input type="submit" class="btn btn-primary btn-block"  value="submit" >
+
+        </form>
+    </div>
+</div>
