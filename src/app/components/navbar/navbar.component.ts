@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isLoggedin: boolean | undefined;
-  isAdmin: boolean | undefined;
+  isLoggedin!: boolean;
+  isAdmin!: boolean;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
-    this.isLoggedin = true;
+    this.isLoggedin = false;
     this.isAdmin = false;
   }
 
+  logout(){
+    this.isLoggedin = false;
+    this.router.navigateByUrl('login');
+
+  }
 
 }

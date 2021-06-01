@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarMain"> 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a *ngIf="isLoggedin && !isAdmin" [routerLink]="['/']" class="nav-link">IPOs</a>
+                    <a *ngIf="isLoggedin && !isAdmin" [routerLink]="['/ipos']" class="nav-link">IPOs</a>
                 </li>
                 <li class="nav-item">
                     <a *ngIf="isLoggedin && !isAdmin" [routerLink]="['/compare']" class="nav-link">Compare Company/Sector</a>
@@ -24,10 +24,12 @@
                 <li class="nav-item">
                     <a *ngIf="isLoggedin" [routerLink]="['/settings']" class="nav-link">Settings</a>
                 </li>
-                <li class="nav-item">
-                    <a *ngIf="isLoggedin" [routerLink]="['/']" class="nav-link">Logout</a>
-                </li>
             </ul>
+            <div class="nav-item">
+                
+                    <button *ngIf="isLoggedin" class="btn btn-danger" (click)="logout()">Logout</button>
+                
+            </div>
         </div>
     </div>
 </nav>

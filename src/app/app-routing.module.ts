@@ -10,6 +10,7 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CompareComponent } from './components/compare/compare.component';
+import { IpoDetailsComponent } from './components/ipo-details/ipo-details.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'client/add',component:AddClientComponent},
   {path: 'client/edit/:id',component:EditClientComponent},
   {path: 'compare',component:CompareComponent},
+  {path: 'ipos',component:IpoDetailsComponent},
   {path: 'settings',component:SettingsComponent},
   {path: '**',component:NotFoundComponent}
 

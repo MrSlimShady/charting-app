@@ -3,7 +3,7 @@
     <h1>Compare Company/Sector</h1>
     </div>
     <div class="card-body">
-        <form #compareForm="ngForm" class="form-horizontal">
+        <form #compareForm="ngForm">
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Company/Sector</label>
                 <div class="col-sm-10">
@@ -11,23 +11,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-12">
-                    <div class="row">
-                      <div class="col-xs-3">
-                          <label for="class_type"><h4><span class=" label label-primary">Class Type</span></h4></label>
-                      </div>
-                      <div class="col-xs-2">
-                          <select name="class_type" id="class_type" class="  form-control input-lg" style="width:200px" autocomplete="off">
-                              <option >Economy</option>
-                              <option >Premium Economy</option>
-                              <option >Club World</option>
-                              <option >First Class</option>
-                          </select>
-                      </div>
-                  </div>
-                  </div>
+                <label for="stockexchange" class="col-sm-2 control-label">Stock Exchange</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="stockexchange" required>
+                </div>
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            
+            <button type="submit" class="btn btn-success btn-block" >Submit</button>
         </form>
     </div>
   
